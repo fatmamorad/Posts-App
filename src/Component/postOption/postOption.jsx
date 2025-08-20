@@ -128,7 +128,7 @@ function PostOption({postId}) {
 
 
 
-    <button id="dropdownMenuIconHorizontalButton" data-dropdown-toggle={"dropdownDotsHorizontal"+postId} class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-900  rounded-lg  focus:outline-none dark:text-white focus:ring-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-600" type="button"> 
+    <button id="dropdownMenuIconHorizontalButton" data-dropdown-toggle={"dropdownDotsHorizontal"+postId} class="inline-flex text-xs md:text-sm items-center p-2  font-medium text-center text-gray-900  rounded-lg  focus:outline-none dark:text-white focus:ring-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-600" type="button"> 
     <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 3">
         <path d="M2 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm6.041 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM14 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z"/>
     </svg>

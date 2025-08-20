@@ -9,7 +9,7 @@ function Profile() {
         <>
         {user?
         <>
-            <div className='flex bg-gray-100  dark:bg-black dark:text-white  w-3/4 mx-auto justify-center  rounded-3xl h-[500px] mt-10 items-center gap-10'>
+            <div className='flex bg-gray-100 flex-wrap   dark:bg-black dark:text-white  w-3/4 mx-auto justify-center  rounded-3xl h-[500px] mt-10 items-center gap-10'>
                 <div className=''>
                     <img src={user.photo} className='w-50 h-50 rounded-full object-cover'/>
                     <Link to='/EditProfile'><i class="ms-4 fa-solid fa-pen-to-square fa-xl mt-5 cursor-pointer"></i></Link>

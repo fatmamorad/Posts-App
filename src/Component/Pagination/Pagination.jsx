@@ -46,7 +46,7 @@ function Pagination(props) {
 
           {Array.from({ length: next - previous + 1 }, (_, i) => previous + i).map((el) => {
             return (
-              <li key={el} onClick={() => pagin(el)}>
+              <li key={el} onClick={() => pagin(el)} className='text-xs md:text-sm'>
                 <a
                   href="#"
                   className={`flex items-center justify-center px-3 h-8 leading-tight border 

@@ -46,27 +46,34 @@ const {  data, isLoading } = useQuery({
             {data?.posts && data.posts.map((post) => {
                 return <>
                 <div  key={post._id}className='my-5 rounded-xl bg-blue-50 p-5 dark:bg-black '>
-                 <div  class="flex items-center gap-4 justify-between">
+                 <div  class="flex items-center   gap-3 md:gap-4 justify-between">
                         <div  class="flex items-center gap-4">
                 <img class="w-10 h-10 rounded-full" src={post.user.photo} alt=""/>
-                <div class="font-medium dark:text-white">
+                <div class="font-medium sm:text-sm dark:text-white">
             
-                    <div>{post.user.name}</div>
-                    <div class="text-sm text-gray-500 dark:text-white">{new Date(post.createdAt).toLocaleDateString()}</div>
+                    <div className='text-xs md:text-sm'>{post.user.name}</div>
+                    <div class="text-xs md:text-sm text-gray-500 dark:text-white">{new Date(post.createdAt).toLocaleDateString()}</div>
                 </div>
                 </div>
-                 {user._id==post.user._id&&<PostOption postId={post.id} postImage={post.image}/>}
+                 {user._id==post.user._id&&<PostOption postId={post.id} post/>}
             </div>
             <div className="">
-               <p className='my-2 ps-2 dark:text-white'>{post.body}</p>
+               <p className='my-4 sm:my-2 text-xs md:text-sm  ps-2 dark:text-white '>{post.body}</p>
                <img src={post.image} className='w-full  rounded-2xl my-3 object-contain  '/>
             </div>
          
-          <div className="flex justify-between text-xs sm:text-sm md:text-base">
-
-                <p className='ms-2 text-blue-600 '><span className='me-2 text-blue-600 '>{post.comments.length}</span>Comments </p>
-                <Link to={'/PostDetails/'+post._id} className='text-blue-600 me-2 cursor-pointer underline-offset-1 '  >See More Details..</Link>
-            </div>
+       <div className="flex flex-col sm:flex-row  sm:items-center sm:justify-between text-xs sm:text-sm mt-2 gap-2">
+                          <p className="text-blue-600">
+                            <span className="me-1">{post.comments.length}</span>
+                            Comments
+                          </p>
+                          <Link
+                            to={'/PostDetails/' + post._id}
+                            className="text-blue-600 underline-offset-1 hover:underline"
+                          >
+                            See More Details..
+                          </Link>
+                        </div>
             </div>
                <CreateComment  post_id={post._id}/>
                 </>

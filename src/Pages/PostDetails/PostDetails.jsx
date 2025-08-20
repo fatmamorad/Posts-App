@@ -89,14 +89,14 @@ function PostDetails() {
             <div key={data.data.post._id} className="flex items-center gap-4">
               <img className="w-10 h-10 rounded-full" src={data.data.post.user.photo} alt="" />
               <div className="font-medium">
-                <div>{data.data.post.user.name}</div>
-                <div className="text-sm text-gray-500">
+                <div className='text-xs md:text-sm'>{data.data.post.user.name}</div>
+                <div className="text-xs md:text-sm text-gray-500">
                   {new Date(data.data.post.createdAt).toLocaleDateString()}
                 </div>
               </div>
             </div>
             <div className="px-13">
-              <p className="my-2 ps-2">{data.data.post.body}</p>
+              <p className="my-2 ps-2 text-xs md:text-sm">{data.data.post.body}</p>
               <img src={data.data.post.image} className="w-full rounded-2xl my-3" />
             </div>
           </div>
@@ -116,8 +116,8 @@ function PostDetails() {
                     alt=""
                   />
                   <div className="font-medium">
-                    <div>{comment.commentCreator.name}</div>
-                    <div className="text-sm text-gray-500 ms-1">
+                    <div className='text-xs md:text-sm'>{comment.commentCreator.name}</div>
+                    <div className="text-xs md:text-sm text-gray-500 ms-1">
                       {new Date(comment.createdAt).toLocaleDateString()}
                     </div>
                   </div>
@@ -128,11 +128,11 @@ function PostDetails() {
                   <div className="font-medium">
                     <i
                       onClick={() => setEditingCommentId(comment._id)}
-                      className="fa fa-edit me-3 cursor-pointer"
+                      className="fa fa-edit me-3 cursor-pointer text-xs md:text-sm"
                     ></i>
                     <i
                       onClick={() => DeleteMutation.mutate(comment._id)}
-                      className="hover:text-red-400 cursor-pointer fa-solid fa-trash"
+                      className="hover:text-red-400 text-xs md:text-smcursor-pointer fa-solid fa-trash"
                     ></i>
                   </div>
                 )}

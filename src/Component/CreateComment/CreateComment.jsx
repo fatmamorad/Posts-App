@@ -46,12 +46,12 @@ function CreateComment(props) {
         onSubmit={handleSubmit((data)=>createCommentMutation.mutate(data))}
         className="mb-5 bg-gray-50 dark:bg-gray-950 rounded-2xl px-3 mt-5 p-1 container mx-auto"
       >
-        <div className="my-5 flex justify-between items-center relative">
-          <div className="w-full relative">
+        <div className="my-5 flex flex-wrap justify-between items-center relative">
+          <div className="md:w-3/4  w-full relative">
             <input
               type="text"
               {...register('content')}
-              className="p-2 mx-auto w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg"
+              className="p-2 mx-auto mb-2  text-xs md:text-smmd:mb-0 w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg"
               placeholder="Comment Body.."
             />
           </div>
@@ -59,7 +59,7 @@ function CreateComment(props) {
           <button
             type="submit"
             disabled={createCommentMutation.isPending}
-            className="w-50 p-2 ms-2 text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm"
+            className=" md:w-1/5 w-full p-2  text-xs md:text-sm text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm"
           >
             {createCommentMutation.isPending ? "Adding..." : "Add Comment"}
           </button>

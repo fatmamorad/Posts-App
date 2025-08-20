@@ -46,12 +46,12 @@ function CreatePost() {
     <>
       <form onSubmit={handleSubmit((data) => mutation.mutate(data))}  className="mb-5 bg-gray-50 mt-5 p-5 container w-3/4 mx-auto dark:bg-black rounded-2xl"
       >
-        <p className="dark:text-white">Post Something</p>
+        <p className="dark:text-white text-xs md:text-sm">Post Something</p>
 
-        <div className="my-5 flex justify-between items-center">
+        <div className="my-5 flex  flex-wrap  justify-between items-center">
           <div className="w-15">
             <img
-              className="w-10 h-10 rounded-full inline-block"
+              className="w-10 h-10 mb-2 m:mb-0 rounded-full inline-block"
               src={
                 user?.photo?.includes('undefined')
                   ? '/default-user.png' 
@@ -60,8 +60,8 @@ function CreatePost() {
               alt=""
             />
           </div>
-
-          <div className="w-full">
+        <div className='flex justify-center items-center'>
+          <div className="w-full mb-2 m:mb-0 ">
             <input
               {...register('body')}
               type="text"
@@ -73,7 +73,7 @@ function CreatePost() {
 
           <div className="w-15 ms-2">
             <label htmlFor="file_input">
-              <i className="fa-regular fa-image fa-2x cursor-pointer text-blue-500"></i>
+              <i className="fa-regular  fa-image fa-2x cursor-pointer text-blue-500"></i>
             </label>
             <input
               ref={imageInput}
@@ -82,12 +82,13 @@ function CreatePost() {
               type="file"
             />
           </div>
+          </div>
         </div>
 
         <button
           type="submit"
           disabled={mutation.isPending}
-          className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 font-medium rounded-lg text-sm px-5 py-2.5"
+          className="w-full text-white text-xs md:text-sm bg-blue-700 hover:bg-blue-800 focus:ring-4 font-medium rounded-lg text-sm px-5 py-2.5"
         >
           {mutation.isPending ? 'Creating...' : 'Create Post'}
         </button>
