@@ -48,10 +48,10 @@ function Navbar() {
       
         {!user?<>
         <li>
-          <NavLink to="/Register" className="block py-2 px-3  rounded-sm   dark:text-white md:dark:text-blue-500" aria-current="page">Login</NavLink>
+          <NavLink to="/Register" className=" text-xs md:text-sm block py-2 px-3  rounded-sm   dark:text-white md:dark:text-blue-500" aria-current="page">Login</NavLink>
         </li>
         <li>
-          <NavLink to="/Login" className="block py-2 px-3 text-gray-900 rounded-sm dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Register</NavLink>
+          <NavLink to="/Login" className="block py-2 text-xs md:text-sm px-3 text-gray-900 rounded-sm dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Register</NavLink>
         </li>
         </>:
        <>
@@ -59,11 +59,11 @@ function Navbar() {
        
         <img class="w-10 h-10 rounded-full inline-block" src={user.photo.includes('undefined')?User:user.photo} alt=""/></li>
          <li>
-          <Link to="/Profile" className="block py-2 px-3 text-gray-900 rounded-sm dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Profile</Link>
+          <Link to="/Profile" className="block py-2 px-3 text-gray-900 rounded-sm text-xs md:text-sm dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Profile</Link>
         </li>
        <li>
     
-        <p >Hello <span className='text-cyan-600'>{user.name}</span></p>
+        <p >Hello <span className='text-cyan-600 text-xs md:text-sm'>{user.name}</span></p>
         </li>
         <li>
           <i onClick={Logout} class="fa-solid fa-arrow-right-from-bracket cursor-pointer"></i>

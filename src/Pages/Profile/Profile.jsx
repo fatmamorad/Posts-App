@@ -16,14 +16,14 @@ function Profile() {
                 </div>
                 <div>
                     <p className='text-xl'>Name</p>
-                    <p className='ms-2 text-gray-400'>{user.name}</p>
-                    <p className='text-xl mt-2'>Email</p>
-                    <p className='ms-2 text-gray-400'>{user.email}</p>
-                     <p className='text-xl mt-2'>Gender</p>
-                      <p className='ms-2 text-gray-400'>{user.gender}</p>
-                      <p className='text-xl mt-2'>Data Of Birth</p>
+                    <p className='ms-2 text-gray-400 text-xs md:text-sm'>{user.name}</p>
+                    <p className='mt-2 text-xs md:text-sm'>Email</p>
+                    <p className='ms-2 text-gray-400 text-xs md:text-sm'>{user.email}</p>
+                     <p className='tmt-2 text-xs md:text-sm'>Gender</p>
+                      <p className='ms-2  text-xs md:text-smtext-gray-400'>{user.gender}</p>
+                      <p className='text-xs md:text-smmt-2'>Data Of Birth</p>
 
-                    <p className=' text-gray-400 ms-2'>{new Date(user.dateOfBirth).toLocaleDateString()}</p>
+                    <p className=' text-gray-400  text-xs md:text-sm ms-2'>{new Date(user.dateOfBirth).toLocaleDateString()}</p>
                 </div>
             </div>
             </>:''}
