@@ -49,7 +49,7 @@ function CreatePost() {
         <p className="dark:text-white text-xs md:text-sm">Post Something</p>
 
         <div className="my-5 flex  flex-wrap  justify-between items-center">
-          <div className="w-15">
+          <div className="w-15 ">
             <img
               className="w-10 h-10 mb-2 m:mb-0 rounded-full inline-block"
               src={
@@ -60,8 +60,8 @@ function CreatePost() {
               alt=""
             />
           </div>
-        <div className='flex justify-center items-center'>
-          <div className="w-full mb-2 m:mb-0 ">
+        <div className='flex md:w-11/12   w-full justify-center items-center'>
+          <div className="mb-2 w-full m:mb-0 ">
             <input
               {...register('body')}
               type="text"
