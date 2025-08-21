@@ -43,19 +43,19 @@ const {  data, isLoading } = useQuery({
     <CreatePost/>
         <div className=' mt-5  p-5 container w-3/4 mx-auto'>
          
-            {data?.posts && data.posts.map((post) => {
+            {data?.posts && data?.posts?.map((post) => {
                 return <>
-                <div  key={post._id}className='my-5 rounded-xl bg-blue-50 p-5 dark:bg-black '>
+                <div  key={post?._id}className='my-5 rounded-xl bg-blue-50 p-5 dark:bg-black '>
                  <div  class="flex items-center   gap-3 md:gap-4 justify-between">
                         <div  class="flex items-center gap-4">
-                <img class="w-10 h-10 rounded-full" src={post.user.photo} alt=""/>
+                <img class="w-10 h-10 rounded-full" src={post?.user.photo} alt=""/>
                 <div class="font-medium sm:text-sm dark:text-white">
             
-                    <div className='text-xs md:text-sm'>{post.user.name}</div>
+                    <div className='text-xs md:text-sm'>{post?.user.name}</div>
                     <div class="text-xs md:text-sm text-gray-500 dark:text-white">{new Date(post.createdAt).toLocaleDateString()}</div>
                 </div>
                 </div>
-                 {user._id==post.user._id&&<PostOption postId={post.id} post/>}
+                 {user?._id==post?.user._id&&<PostOption postId={post.id} post/>}
             </div>
             <div className="">
                <p className='my-4 sm:my-2 text-xs md:text-sm  ps-2 dark:text-white '>{post.body}</p>
@@ -68,14 +68,14 @@ const {  data, isLoading } = useQuery({
                             Comments
                           </p>
                           <Link
-                            to={'/PostDetails/' + post._id}
+                            to={'/PostDetails/' + post?._id}
                             className="text-blue-600 underline-offset-1 hover:underline"
                           >
                             See More Details..
                           </Link>
                         </div>
             </div>
-               <CreateComment  post_id={post._id}/>
+               <CreateComment  post_id={post?._id}/>
                 </>
  } )}
            
